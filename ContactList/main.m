@@ -19,13 +19,14 @@ int main(int argc, const char * argv[]) {
         ContactList *contactList = [[ContactList alloc] init];
 
         while (inputLoop) {
-            NSString *userInput = [[newInput inputForPrompt:@"The menu: What would you like do next? \nnew - Create a new contact list - List all contacts quit - Exit Application > _"] lowercaseString];
+            NSString *userInput = [[newInput inputForPrompt:@"The menu: What would you like do next? \nnew - Create a new contact; list - List all contacts; quit - Exit Application > _"] lowercaseString];
+            
             
             if ([userInput isEqualToString:@"quit"]) {
                 NSLog(@"Adieu!");
                 break;
             }
-            if ([userInput isEqualToString:@"new"]) {
+            else if ([userInput isEqualToString:@"new"]) {
                 NSString *fullname = [newInput inputForPrompt:@"Enter your full name: "];
                 NSString *email = [newInput inputForPrompt:@"Enter your email: "];
                 
@@ -33,6 +34,14 @@ int main(int argc, const char * argv[]) {
                 [contactList addContact:contact1];
 
             }
+            else if ([userInput isEqualToString:@"list"]) {
+                [contactList printContactList]; 
+            }
+            else if ([userInput isEqualToString:@"show"]) {
+                int idNumber = [[newInput inputForPrompt:@"Enter an id number: "] intValue];
+                [contactList showContactInfo:idNumber]; 
+            }
+            
             
            
         }
