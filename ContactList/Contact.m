@@ -15,7 +15,8 @@
     self = [super init];
     if (self) {
         _name = name;
-        _email = email; 
+        _email = email;
+        _phonenumbers = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -25,6 +26,8 @@
     return [NSString stringWithFormat:@"%@", self.name];
 }
 
-
+- (void)addNumbers:(PhoneNumbers *)phoneNumber {
+    [self.phonenumbers addObject:phoneNumber]; 
+}
 
 @end

@@ -10,6 +10,15 @@
 
 @implementation InputCollector
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _history = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 -(NSString *)inputForPrompt:(NSString *)promptString {
     NSLog(@"%@", promptString);
     
@@ -21,7 +30,16 @@
     //getting rid of whitespace
     theInput = [theInput stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
+    [self.history addObject:theInput];
+    
     return theInput;
+}
+
+-(void)countHistory {
+    NSLog(@"%lu", [self.history count]);
+    for (unsigned long int i = [self.history count] - 1; i > [self.history count] - 3 ; i--) {
+        NSLog(@"%@", self.history[i]);
+    }
 }
 
 @end

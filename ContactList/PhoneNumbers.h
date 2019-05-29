@@ -1,5 +1,5 @@
 //
-//  InputCollector.h
+//  PhoneNumbers.h
 //  ContactList
 //
 //  Created by Ekam Singh Dhaliwal on 2019-05-28.
@@ -10,14 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface InputCollector : NSObject
+@interface PhoneNumbers : NSObject
 
-@property NSMutableArray *history;
+@property NSString *label;
+@property NSString *number; 
 
--(NSString *)inputForPrompt:(NSString *)promptString;
-
--(void)countHistory;
-
+- (instancetype)initWithType:(NSString *)type andNumber:(NSString *)number; 
 
 @end
 

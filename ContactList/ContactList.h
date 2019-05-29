@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Contact.h"
+#import "PhoneNumbers.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +23,10 @@ NS_ASSUME_NONNULL_BEGIN
 -(void)printContactList;
 
 -(void)showContactInfo:(int)userID;
+
+-(void)findContact:(NSString *)contactSubstring;
+
+-(BOOL)duplicateEmailCheck:(NSString *)email; 
 
 @end
 

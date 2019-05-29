@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PhoneNumbers.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -14,11 +15,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSString *name;
 @property NSString *email;
+@property NSMutableArray *phonenumbers;
 
 
 - (instancetype)initWithName:(NSString *)name andEmail:(NSString *)email;
 
-
+- (void)addNumbers:(PhoneNumbers *)phoneNumber;
 
 @end
 
